@@ -1,0 +1,16 @@
+# Copy to config.yaml only if you want to override demo defaults.
+app:
+  source_mode: "demo"
+  archive_dir: "outputs"
+  business_hours_path: "data/demo_business_hours.csv"
+  activity_path: "data/demo_activity.csv"
+  log_dir: "outputs/logs"
+
+rules:
+  min_abnormal_minutes: 15
+  impact_factor: 0.70
+  gap_merge_tolerance_minutes: 0
+
+notify:
+  channel: "file"
+  output: "outputs/daily_summary.md"

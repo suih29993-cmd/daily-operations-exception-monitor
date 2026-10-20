@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-10-20T14:45:21+08:00",
+  "source_mode": "demo",
+  "simulation": true,
+  "notice": "All stores, schedules, sales and impact estimates are synthetic. This is not a real business result.",
+  "rules": {
+    "min_abnormal_minutes": 15,
+    "impact_factor": 0.7,
+    "gap_merge_tolerance_minutes": 0,
+    "impact_formula": "expected_hourly_sales × abnormal_minutes ÷ 60 × impact_factor"
+  },
+  "validation": {
+    "activity_rows": 72,
+    "matched_rows": 72,
+    "missing_business_hours": [],
+    "below_threshold": 66
+  },
+  "totals": {
+    "anomalies": 6,
+    "stores": 6,
+    "abnormal_minutes": 1380,
+    "estimated_impacted_sales": 4011.0
+  },
+  "anomalies": [
+    {
+      "date": "2026-08-03",
+      "weekday": "Monday",
+      "channel": "channel_a",
+      "store_id": "Store_A002",
+      "store_name": "Demo Store A002",
+      "region": "Region_A",
+      "city": "Demo City A1",
+      "supervisor": "Supervisor_A1",
+      "planned_segments": "10:00-22:00",
+      "actual_segments": "10:00-13:00; 14:00-16:00; 18:00-22:00",
+      "abnormal_segments": "13:00-14:00; 16:00-18:00",
+      "abnormal_minutes": 180,
+      "expected_hourly_sales": 232.0,
+      "estimated_impacted_sales": 487.2,
+      "orders": 54,
+      "gmv": 1837.44
+    },
+    {
+      "date": "2026-08-03",
+      "weekday": "Monday",
+      "channel": "channel_b",
+      "store_id": "Store_A004",
+      "store_name": "Demo Store A004",
+      "region": "Region_A",
+      "city": "Demo City A2",
+      "supervisor": "Supervisor_A1",
+      "planned_segments": "10:00-22:00",
+      "actual_segments": "12:00-22:00",
+      "abnormal_segments": "10:00-12:00",
+      "abnormal_minutes": 120,
+      "expected_hourly_sales": 254.0,
+      "estimated_impacted_sales": 355.6,
+      "orders": 66,
+      "gmv": 2235.2
+    },
+    {
+      "date": "2026-08-03",
+      "weekday": "Monday",
+      "channel": "channel_a",
+      "store_id": "Store_B001",
+      "store_name": "Demo Store B001",
+      "region": "Region_B",
+      "city": "Demo City B1",
+      "supervisor": "Supervisor_B0",
+      "planned_segments": "10:00-22:00",
+      "actual_segments": "10:00-20:00",
+      "abnormal_segments": "20:00-22:00",
+      "abnormal_minutes": 120,
+      "expected_hourly_sales": 239.0,
+      "estimated_impacted_sales": 334.6,
+      "orders": 62,
+      "gmv": 2103.2
+    },
+    {
+      "date": "2026-08-04",
+      "weekday": "Tuesday",
+      "channel": "channel_a",
+      "store_id": "Store_B003",
+      "store_name": "Demo Store B003",
+      "region": "Region_B",
+      "city": "Demo City B2",
+      "supervisor": "Supervisor_B1",
+      "planned_segments": "10:00-22:00",
+      "actual_segments": "11:00-14:00; 16:00-22:00",
+      "abnormal_segments": "10:00-11:00; 14:00-16:00",
+      "abnormal_minutes": 180,
+      "expected_hourly_sales": 261.0,
+      "estimated_impacted_sales": 548.1,
+      "orders": 61,
+      "gmv": 2067.12
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": "Wednesday",
+      "channel": "channel_a",
+      "store_id": "Store_A005",
+      "store_name": "Demo Store A005",
+      "region": "Region_A",
+      "city": "Demo City A3",
+      "supervisor": "Supervisor_A2",
+      "planned_segments": "10:00-22:00",
+      "actual_segments": "10:00-16:00; 17:00-22:00",
+      "abnormal_segments": "16:00-17:00",
+      "abnormal_minutes": 60,
+      "expected_hourly_sales": 265.0,
+      "estimated_impacted_sales": 185.5,
+      "orders": 75,
+      "gmv": 2565.2
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": "Wednesday",
+      "channel": "channel_b",
+      "store_id": "Store_B002",
+      "store_name": "Demo Store B002",
+      "region": "Region_B",
+      "city": "Demo City B1",
+      "supervisor": "Supervisor_B1",
+      "planned_segments": "10:00-22:00",
+      "actual_segments": "none",
+      "abnormal_segments": "10:00-22:00",
+      "abnormal_minutes": 720,
+      "expected_hourly_sales": 250.0,
+      "estimated_impacted_sales": 2100.0,
+      "orders": 0,
+      "gmv": 0.0
+    }
+  ],
+  "region_summary": [
+    {
+      "region": "Region_A",
+      "anomalies": 3,
+      "stores": 3,
+      "abnormal_minutes": 360,
+      "estimated_impacted_sales": 1028.3
+    },
+    {
+      "region": "Region_B",
+      "anomalies": 3,
+      "stores": 3,
+      "abnormal_minutes": 1020,
+      "estimated_impacted_sales": 2982.7
+    }
+  ],
+  "supervisor_summary": [
+    {
+      "region": "Region_A",
+      "supervisor": "Supervisor_A1",
+      "anomalies": 2,
+      "stores": 2,
+      "abnormal_minutes": 300,
+      "estimated_impacted_sales": 842.8
+    },
+    {
+      "region": "Region_A",
+      "supervisor": "Supervisor_A2",
+      "anomalies": 1,
+      "stores": 1,
+      "abnormal_minutes": 60,
+      "estimated_impacted_sales": 185.5
+    },
+    {
+      "region": "Region_B",
+      "supervisor": "Supervisor_B0",
+      "anomalies": 1,
+      "stores": 1,
+      "abnormal_minutes": 120,
+      "estimated_impacted_sales": 334.6
+    },
+    {
+      "region": "Region_B",
+      "supervisor": "Supervisor_B1",
+      "anomalies": 2,
+      "stores": 2,
+      "abnormal_minutes": 900,
+      "estimated_impacted_sales": 2648.1
+    }
+  ],
+  "channel_summary": [
+    {
+      "channel": "channel_a",
+      "anomalies": 4,
+      "stores": 4,
+      "abnormal_minutes": 540,
+      "estimated_impacted_sales": 1555.4
+    },
+    {
+      "channel": "channel_b",
+      "anomalies": 2,
+      "stores": 2,
+      "abnormal_minutes": 840,
+      "estimated_impacted_sales": 2455.6
+    }
+  ]
+}
