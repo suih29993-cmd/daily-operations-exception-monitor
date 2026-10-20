@@ -76,4 +76,4 @@ This is a public portfolio implementation, not a deployed enterprise service. It
 - Reports and logs stay under `outputs/`; refreshed preview copies stay under `examples/`. No shared output directory or original project file is used.
 - `Config.validate()` accepts only `source_mode: demo` and `notify.channel: file`. Live modes and external notification channels fail before report generation.
 - The code contains no HTTP, webhook, browser-automation, credential or recipient integration. It cannot contact a merchant portal, internal service or group chat.
-- Dependencies are Python, openpyxl and the standard library. All monetary values are synthetic and explicitly labelled as simulations.
+- Dependencies are Python, openpyxl, PyYAML and the standard library. All monetary values are synthetic and explicitly labelled as simulations.
