@@ -1,8 +1,12 @@
-# Synthetic Daily Abnormal Closure Report
+# Daily Operations Exception Monitor
 
 [![closure-report-ci](https://github.com/suih29993-cmd/daily-operations-exception-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/suih29993-cmd/daily-operations-exception-monitor/actions/workflows/ci.yml)
 
 `Python 3.11+` · `Synthetic data` · `openpyxl` · `PyYAML`
+
+**Synthetic abnormal-closure analysis with Excel, Markdown and JSON reporting.**
+
+> **Demo status:** this is a local CLI workflow with no hosted web demo. Run the quick start below or inspect the committed [example outputs](examples/).
 
 A reproducible Python workflow for detecting abnormal closure intervals from planned versus observed online segments, estimating the affected duration and generating region, supervisor and channel summaries.
 
@@ -52,6 +56,8 @@ The committed synthetic run produces six abnormal intervals across six stores:
 | **Total** | **6** | **6** | **1,380** | **4,011.00** |
 
 These figures are demonstration output, not business results. The Excel workbook contains `Daily_Summary`, `Anomaly_Details`, `Region_Summary`, `Supervisor_Summary`, `Channel_Summary`, `Methodology` and `Input_Validation` sheets.
+
+**Sample files:** [Excel](examples/demo_daily_abnormal_closure.xlsx) · [Markdown](examples/demo_daily_abnormal_closure.md) · [JSON](examples/demo_daily_abnormal_closure.json)
 
 ## Quick start
 
