@@ -1,8 +1,19 @@
 # Synthetic Daily Abnormal Closure Report
 
+[![closure-report-ci](https://github.com/suih29993-cmd/daily-operations-exception-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/suih29993-cmd/daily-operations-exception-monitor/actions/workflows/ci.yml)
+
+`Python 3.11+` · `Synthetic data` · `openpyxl` · `PyYAML`
+
 A reproducible Python workflow for detecting abnormal closure intervals from planned versus observed online segments, estimating the affected duration and generating region, supervisor and channel summaries.
 
 > **Data notice:** all schedules, stores, channel activity, orders and monetary values are synthetic. The estimated impacted sales column is a **simulation** and must not be presented as actual business performance.
+
+## At a glance
+
+- 84 synthetic schedule rows and 72 synthetic channel-activity rows across two regions.
+- Interval parsing, merging and subtraction, with a configurable minimum-duration rule.
+- A seven-sheet Excel report plus Markdown and JSON outputs.
+- Five unit/integration tests; CI validates the dataset, runs tests and builds the reports.
 
 ## What it demonstrates
 
@@ -30,6 +41,18 @@ estimated impacted sales = expected hourly sales × abnormal minutes ÷ 60 × im
 
 `impact_factor` is an illustrative assumption in this portfolio version. It is not a production rule.
 
+## Example output
+
+The committed synthetic run produces six abnormal intervals across six stores:
+
+| Region | Anomalies | Stores | Abnormal minutes | Simulated impact (CNY) |
+| --- | ---: | ---: | ---: | ---: |
+| Region_A | 3 | 3 | 360 | 1,028.30 |
+| Region_B | 3 | 3 | 1,020 | 2,982.70 |
+| **Total** | **6** | **6** | **1,380** | **4,011.00** |
+
+These figures are demonstration output, not business results. The Excel workbook contains `Daily_Summary`, `Anomaly_Details`, `Region_Summary`, `Supervisor_Summary`, `Channel_Summary`, `Methodology` and `Input_Validation` sheets.
+
 ## Quick start
 
 ```powershell
@@ -38,6 +61,8 @@ python scripts/generate_demo_inputs.py
 python main.py run --examples
 python main.py validate
 ```
+
+The Python commands work on Windows, Linux and macOS. `scripts/run_demo.bat` is a Windows convenience wrapper.
 
 Generated files:
 
@@ -59,6 +84,13 @@ data/                           deterministic synthetic inputs
 tests/                          unit and integration tests
 docs/METHODOLOGY.md             calculation and simulation boundaries
 ```
+
+## Design decisions
+
+- Abnormal closure is detected by subtracting observed online intervals from planned operating intervals, rather than by a single status flag.
+- Stores without a matching schedule row are rejected from the report instead of being silently skipped.
+- The impact formula is deliberately transparent and every monetary result is labelled synthetic.
+- The public version has no live adapters, credentials or external notification path.
 
 ## Tests
 
